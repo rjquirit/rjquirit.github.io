@@ -37,6 +37,38 @@
   --nav-dropdown-hover-color: #0078ff; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+/* Light Mode */
+:root {
+  --background-color: #ffffff;
+  --default-color: #4e4e4e;
+  --heading-color: #0a090f;
+  --accent-color: #0078ff;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  --nav-color: #ffffff;
+  --nav-hover-color: #0078ff;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #212529;
+  --nav-dropdown-hover-color: #0078ff;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --background-color: #001f3f;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #0074d9;
+  --surface-color: #003366;
+  --contrast-color: #ffffff;
+  --nav-color: #ffffff;
+  --nav-hover-color: #0074d9;
+  --nav-mobile-background-color: #001f3f;
+  --nav-dropdown-background-color: #003366;
+  --nav-dropdown-color: #ffffff;
+  --nav-dropdown-hover-color: #0074d9;
+}
+
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -1626,4 +1658,52 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# Theme Switch
+--------------------------------------------------------------*/
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.theme-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #0074d9;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
 }
